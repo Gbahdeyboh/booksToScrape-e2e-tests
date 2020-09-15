@@ -63,27 +63,32 @@
 			let user = localStorage.getItem("user");
 			user = JSON.parse(user);
 
-			console.log("Username => ", username)
-			console.log("Password => ", password)
+			if(user){
+				console.log("Username => ", username)
+				console.log("Password => ", password)
 
-			console.log("user Username => ", user.username)
-			console.log("user Password => ", user.password)
+				console.log("user Username => ", user.username)
+				console.log("user Password => ", user.password)
 
-			// Load the page
-			const loader = document.querySelector('#loader');
+				// Load the page
+				const loader = document.querySelector('#loader');
 
-			loader.style.display = "flex";
+				loader.style.display = "flex";
 
-			const randomTime = Math.random() * 5 * 1000; // Random number between 1 and 5
-	        setTimeout(() => {
-	            loader.style.display = "none";
-	            // Confirm the login details
-	            if(username == user.username && password == user.password){
-	            	window.location.assign('./home.html');
-	            } else {
-	            	alert("Invalid username or password inputted");
-	            }
-	        }, randomTime);
+				const randomTime = Math.random() * 5 * 1000; // Random number between 1 and 5
+		        setTimeout(() => {
+		            loader.style.display = "none";
+		            // Confirm the login details
+		            if(username == user.username && password == user.password){
+		            	window.location.assign('./home.html');
+		            } else {
+		            	alert("Invalid username or password inputted");
+		            }
+		        }, randomTime);
+			} else {
+            	alert("Invalid username or password inputted");
+			}
+
 		});
 
 	})
