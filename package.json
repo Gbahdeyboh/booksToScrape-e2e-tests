@@ -1,0 +1,26 @@
+{
+  "name": "e2e",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "puppeteer": "jest ./specs/ --detectOpenHandles"
+  },
+  "dependencies": {
+    "jest": "25.2.4",
+    "jest-puppeteer": "4.4.0",
+    "puppeteer": "2.1.1",
+    "jest-puppeteer-preset": "4.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Gbahdeyboh/booksToScrape-e2e-tests.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Gbahdeyboh/booksToScrape-e2e-tests/issues"
+  },
+  "homepage": "https://github.com/Gbahdeyboh/booksToScrape-e2e-tests#readme"
+}
