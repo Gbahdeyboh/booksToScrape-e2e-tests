@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Sample Login Page</title>
+	<title>Sample Signup Page</title>
 	<meta charset="utf-8">
 	<meta name="description" content="A simple portfolio page for Ai saturdays abeokuta chapter">
 	<meta name="author" content="Bello Gbadebo" />
@@ -12,30 +12,11 @@
 	<link rel="stylesheet" media="all" href="./css/materialize.min.css">
 	<link rel="stylesheet" type="text/css" media="all" href="/static/css/icons/icon_set_1.css" />
 	<link rel="stylesheet" type="text/css" media="all" href="/static/css/icons/icon_set_2.css" />
-
-    <script type="text/javascript" src="./js/login.js"></script>
 </head>
 <body>
 	<div class="body displayFlex">
-		<div class="z-depth-2" id="loginBody">
-			<div id="loginHeader">
-				<h4>Login</h4>
-			</div>
-			<div class="row inputField">
-			    <div class="input-field">
-				    <input type="text" id="username" placeholder="Type in your username...">
-				    <label class="active" for="first_name2">Username</label>
-			    </div>
-			</div>
-			<div class="row inputField">
-			    <div class="input-field">
-				    <input type="text" id="password" placeholder="Type in your password...">
-				    <label class="active" for="first_name2">Password</label>
-			    </div>
-			</div>
-			<div class="row inputField">
-				<div class="btn-large blue waves-effect waves-light right" id="loginBtn">Login</div>
-			</div>
+		<div class=" displayFlex" id="loginBody">
+			<h3>Welcome <span id="firstname"></span>!</h3>
 		</div>
 	</div>
 
@@ -54,10 +35,11 @@
 	</div>
 	<script type="text/javascript">
 	document.addEventListener('DOMContentLoaded', () => {
-		const loginBtn = document.querySelector('#loginBtn');
-
-
-		const loader = document.querySelector('#loader');
+		let userData = localStorage.getItem("user");
+		userData = JSON.parse(userData);
+		const fullname = userData.fullname;
+		const firstname = document.querySelector("#firstname");
+		firstname.textContent = fullname.split(' ')[0]; 
 	})
 	</script>
 </body>

@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "puppeteer": "jest ./specs/ --detectOpenHandles"
+    "puppeteer": "jest ./specs --detectOpenHandles"
   },
   "dependencies": {
     "jest": "25.2.4",
