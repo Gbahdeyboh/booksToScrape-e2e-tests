@@ -44,7 +44,8 @@
   background: grey;
 }
 
-#loginBody {
+#loginBody,
+#signupBody {
   width: 500px;
   min-height: 300px;
   background: white;

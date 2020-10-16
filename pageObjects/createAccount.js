@@ -1,12 +1,11 @@
-/* eslint-disable no-console */
 const chalk = require( 'chalk' );
 
 class createAccountPage {
 	constructor( page ) {
 		this.url = "https://mock-auth.netlify.app/"
 		this.page = page;
-		this.signupBtn = '#login';
-		this.loginBody = '#loginBody';
+		this.signupBtn = '#signup';
+		this.signBody = '#loginBody';
 		this.usernameField = '#username';
 		this.passwordField = '#password';
 		this.loginPageBtn = '#loginBtn';
@@ -16,9 +15,9 @@ class createAccountPage {
 		try {
 			await this.page.goto( this.url );
 			await this.page.waitFor( this.signupBtn );
-			// await this.page.click( this.loginBtn );
-			// Wait for the loginBody on the login page to load
-			// await this.page.waitFor( this.loginBody );
+			await this.page.click( this.signupBtn );
+			// Wait for the signBody on the signup page to load
+			await this.page.waitFor( this.loginBody );
 
 			// Type the login credentials into the input fields
 			// await this.page.type( this.usernameField, username )''
