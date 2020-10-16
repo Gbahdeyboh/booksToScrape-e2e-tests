@@ -2,7 +2,7 @@
 /* eslint-disable no-console */
 const chalk = require( 'chalk' );
 const NodeEnvironment = require( 'jest-environment-node' );
-const puppeteerChrome = require( 'puppeteer' );
+const puppeteer = require( 'puppeteer' );
 const fs = require( 'fs' );
 const os = require( 'os' );
 const path = require( 'path' ),
@@ -22,7 +22,7 @@ class PuppeteerEnvironment extends NodeEnvironment {
 			throw new Error( 'wsEndpoint not found' );
 		}
 		// set the value of puppeteer based on the browser selected in the config
-		this.global.__BROWSER__ = await puppeteerChrome.connect( {
+		this.global.__BROWSER__ = await puppeteer.connect( {
 			browserWSEndpoint: wsEndpoint
 		} );
 	}

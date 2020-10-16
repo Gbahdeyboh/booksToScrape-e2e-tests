@@ -1,38 +1,27 @@
 /* eslint-disable no-console */
 const chalk = require( 'chalk' );
 
-class LoginAccountPage {
+class createAccountPage {
 	constructor( page ) {
 		this.url = "https://mock-auth.netlify.app/"
 		this.page = page;
-		this.loginBtn = '#login';
+		this.signupBtn = '#login';
 		this.loginBody = '#loginBody';
 		this.usernameField = '#username';
 		this.passwordField = '#password';
 		this.loginPageBtn = '#loginBtn';
 	}
 
-	async logout() {
-		try {
-			// await this.page.click( this.logoutBtn );
-			// await this.page( 1000 );
-		} catch ( err ) {
-			console.log( chalk.red( 'ERROR => ', err ) );
-		}
-	}
-
-	async login( username, password ) {
+	async signup( fullname, username, password ) {
 		try {
 			await this.page.goto( this.url );
-			await this.page.waitFor( this.loginBtn );
-			await this.page.click( this.loginBtn );
+			await this.page.waitFor( this.signupBtn );
+			// await this.page.click( this.loginBtn );
 			// Wait for the loginBody on the login page to load
-			await this.page.waitFor( this.loginBody );
+			// await this.page.waitFor( this.loginBody );
 
 			// Type the login credentials into the input fields
-			await this.page.type( this.usernameField, username );
-			await this.page.type( this.passwordField, password );
-			await this.page.click( this.loginPageBtn );
+			// await this.page.type( this.usernameField, username )''
 
 			// // The username should already be in the username field since user just logged out
 			// await this.page.type( this.password, password );
@@ -42,4 +31,4 @@ class LoginAccountPage {
 	}
 }
 
-module.exports = ( page ) => new LoginAccountPage( page );
+module.exports = ( page ) => new createAccountPage( page );
