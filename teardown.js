@@ -1,6 +1,3 @@
-/* eslint-disable no-undef */
-
-/* eslint-disable no-underscore-dangle */
 const chalk = require( 'chalk' );
 const rimraf = require( 'rimraf' );
 const os = require( 'os' );
@@ -11,6 +8,6 @@ const path = require( 'path' ),
 module.exports = async function () {
 	// eslint-disable-next-line no-console
 	console.log( chalk.green( 'Teardown Puppeteer' ) );
-	await global.__BROWSER_GLOBAL__.close();
+	// await global.__BROWSER_GLOBAL__.close();
 	rimraf.sync( DIR );
 };

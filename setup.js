@@ -9,7 +9,7 @@ const path = require( 'path' ),
 module.exports = async function () {
 	let browser = await puppeteerChrome.launch( {
 			headless: false,
-			args: [ '--no-sandbox', '--disable-setuid-sandbox' ]
+			args: [ '--no-sandbox', '--disable-setuid-sandbox', "--window-size=1366,768" ]
 		} )
 
 	// This global is not available inside tests but only in global teardown
