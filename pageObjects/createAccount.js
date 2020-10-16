@@ -5,10 +5,12 @@ class createAccountPage {
 		this.url = "https://mock-auth.netlify.app/"
 		this.page = page;
 		this.signupBtn = '#signup';
-		this.signBody = '#loginBody';
+        this.signupBody = '#signupBody';
+        this.fullnameField = '#fullname';
 		this.usernameField = '#username';
 		this.passwordField = '#password';
-		this.loginPageBtn = '#loginBtn';
+        this.loginPageBtn = '#loginBtn';
+        this.signupPageBtn = '#signupBtn';
 	}
 
 	async signup( fullname, username, password ) {
@@ -17,13 +19,15 @@ class createAccountPage {
 			await this.page.waitFor( this.signupBtn );
 			await this.page.click( this.signupBtn );
 			// Wait for the signBody on the signup page to load
-			await this.page.waitFor( this.loginBody );
+			await this.page.waitFor( this.signupBody );
 
 			// Type the login credentials into the input fields
-			// await this.page.type( this.usernameField, username )''
-
-			// // The username should already be in the username field since user just logged out
-			// await this.page.type( this.password, password );
+			await this.page.type( this.fullnameField, fullname );
+			await this.page.type( this.usernameField, username );
+            await this.page.type( this.passwordField, password );
+            
+            // Click thne create account button
+            await this.page.click( this.signupPageBtn );
 		} catch ( err ) {
 			console.log( chalk.red( 'ERROR => ', err ) );
 		}
