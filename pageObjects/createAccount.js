@@ -22,12 +22,23 @@ class createAccountPage {
 			await this.page.waitFor( this.signupBody );
 
 			// Type the login credentials into the input fields
-			await this.page.type( this.fullnameField, fullname );
+            await this.page.type( this.fullnameField, fullname );
+            await this.page.waitFor( 1000 );
 			await this.page.type( this.usernameField, username );
+            await this.page.waitFor( 1000 );
             await this.page.type( this.passwordField, password );
+            await this.page.waitFor( 1000 );
             
             // Click thne create account button
             await this.page.click( this.signupPageBtn );
+
+            // Wait for homepage to load 
+            await this.page.waitFor( '#firstname' );
+            await this.page.waitFor( 2000 );
+
+            const firstname = await this.page.$eval( '#homeBody #firstname', el =>  el.textContent );
+            
+            return firstname;
 		} catch ( err ) {
 			console.log( chalk.red( 'ERROR => ', err ) );
 		}

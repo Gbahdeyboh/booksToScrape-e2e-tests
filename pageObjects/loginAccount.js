@@ -12,15 +12,6 @@ class LoginAccountPage {
 		this.loginPageBtn = '#loginBtn';
 	}
 
-	async logout() {
-		try {
-			// await this.page.click( this.logoutBtn );
-			// await this.page( 1000 );
-		} catch ( err ) {
-			console.log( chalk.red( 'ERROR => ', err ) );
-		}
-	}
-
 	async login( username, password ) {
 		try {
 			await this.page.goto( this.url );
@@ -31,11 +22,20 @@ class LoginAccountPage {
 
 			// Type the login credentials into the input fields
 			await this.page.type( this.usernameField, username );
+            await this.page.waitFor( 1000 );
+			
 			await this.page.type( this.passwordField, password );
+            await this.page.waitFor( 1000 );
+
 			await this.page.click( this.loginPageBtn );
 
-			// // The username should already be in the username field since user just logged out
-			// await this.page.type( this.password, password );
+			// Wait for homepage to load 
+			await this.page.waitFor( '#firstname' );
+			await this.page.waitFor( 2000 );
+ 
+			const firstname = await this.page.$eval( '#homeBody #firstname', el =>  el.textContent );
+
+			return firstname;
 		} catch ( err ) {
 			console.log( chalk.red( 'ERROR => ', err ) );
 		}

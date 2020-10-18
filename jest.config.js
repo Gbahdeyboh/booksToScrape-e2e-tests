@@ -1,8 +1,4 @@
 module.exports = {
-	preset: 'jest-puppeteer-preset',
+	preset: 'jest-puppeteer',
 	roots: [ 'specs' ],
-	verbose: true,
-	globalSetup: './setup.js',
-	globalTeardown: './teardown.js',
-	testEnvironment: './puppeteer_environment.js'
 };

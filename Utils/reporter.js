@@ -5,7 +5,7 @@ module.exports = ( filename, page ) => {
 	* @param {Object} page - The page Object of the current page whose screenshot is being taken
 	* @return {Object} reporter - The reporter object
 	*/
-	const path = './tests/puppeteer/log/',
+	const path = './log/',
 	 filepath = `${path + filename}.png`,
 	 reporter = {
 			specDone: async ( result ) => {
