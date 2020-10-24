@@ -1,6 +1,6 @@
 const chalk = require( 'chalk' );
 
-class createAccountPage {
+class createAccount {
 	constructor( page ) {
 		this.url = "https://mock-auth.netlify.app/"
 		this.page = page;
@@ -45,4 +45,4 @@ class createAccountPage {
 	}
 }
 
-module.exports = ( page ) => new createAccountPage( page );
+module.exports = ( page ) => new createAccount( page );

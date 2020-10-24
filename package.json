@@ -4,13 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "puppeteer": "jest ./specs --detectOpenHandles"
+    "puppeteer": "jest"
   },
   "dependencies": {
     "jest": "25.2.4",
     "jest-puppeteer": "4.4.0",
-    "puppeteer": "2.1.1",
-    "jest-puppeteer-preset": "4.4.0"
+    "puppeteer": "2.1.1"
   },
   "repository": {
     "type": "git",

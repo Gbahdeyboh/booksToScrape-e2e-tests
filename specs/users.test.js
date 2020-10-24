@@ -1,9 +1,7 @@
-require('expect-puppeteer');
-
-let loginAccountPage = require( '../pageObjects/loginAccount' );
-let createAccountPage = require( '../pageObjects/createAccount' );
-let reporterObj = require( '../Utils/reporter' );
-let credentials = require( '../Utils/credentials' );
+let loginAccountPage = require( '../actions/loginAccount' );
+let createAccountPage = require( '../actions/createAccount' );
+let reporterObj = require( '../utils/reporter' );
+let credentials = require( '../utils/credentials' );
 
 jest.setTimeout(60000);
 
@@ -18,7 +16,7 @@ describe('User should be able to create an account and logout', () => {
 			deviceScaleFactor: 1
 		} );
 
-		credential = credentials.generateCredential( 'User' );
+		credential = credentials( 'User' );
 
 		loginAccountPage = await loginAccountPage( page );
 		createAccountPage = await createAccountPage( page );	
@@ -52,3 +50,4 @@ describe('User should be able to create an account and logout', () => {
 	})
 	
 } );
+
