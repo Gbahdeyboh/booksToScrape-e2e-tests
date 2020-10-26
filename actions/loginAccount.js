@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 const chalk = require( 'chalk' );
 
-class LoginAccountPage {
+class LoginAccount {
 	constructor( page ) {
 		this.url = "https://mock-auth.netlify.app/"
 		this.page = page;
@@ -42,4 +42,4 @@ class LoginAccountPage {
 	}
 }
 
-module.exports = ( page ) => new LoginAccountPage( page );
+module.exports = ( page ) => new LoginAccount( page );
