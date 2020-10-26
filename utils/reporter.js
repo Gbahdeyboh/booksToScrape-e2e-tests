@@ -10,9 +10,9 @@ module.exports = ( filename, page ) => {
 	 reporter = {
 			specDone: async ( result ) => {
 				if ( result.status === 'failed' ) {
-            	// log the screenshot when any test fails
+					// log the screenshot when any test fails
 					await page.screenshot( { path: filepath } );
-				console.log("An image log of this test failing can be found at ", filepath);
+					console.log("An image log of this test failing can be found at ", filepath);
 				}
 			}
 		};
