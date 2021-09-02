@@ -1,7 +1,7 @@
 spec:
- name: scrapingSite
+ name: sample-scraping-site
  static_sites:
  - git:
-     branch: main
+     branch: master
      repo_clone_url: https://github.com/gbahdeyboh/booksToScrape-e2e-tests.git
-   name: sampleSite
+   name: sample-scraping-site
